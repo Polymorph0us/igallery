@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Cute Cats</h1>
+        <p>Click on any photo to view it in detail</p>
+    </header>
+    <main>
+        <div class="gallery">
+            <img src="./images/edgar-nKC772R_qog-unsplash.jpg" alt="Nature Water" data-index="0" />
+            <img src="./images/c2.png" data-index="1" />
+            <img src="./images/c3.png" data-index="2" />
+            <img src="./images/c4.png" data-index="3" />
+            <img src="./images/c5.png" data-index="4" />
+            <img src="./images/c7.png" data-index="5" />
+            <img src="./images/c9.png" data-index="6" />
+            <img src="./images/c8.png" data-index="7" />
+        </div>
+    </main>
+
+    <!-- Lightbox overlay -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" id="closeBtn" aria-label="Close">&times;</button>
+        <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous">&#10094;</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="" />
+        <button class="nav-btn next-btn" id="nextBtn" aria-label="Next">&#10095;</button>
+        <div class="caption" id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

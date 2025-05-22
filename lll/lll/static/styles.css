@@ -1,0 +1,146 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.15);
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+}
+header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+main {
+    max-width: 1000px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1rem;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.25);
+}
+
+/* Lightbox styles */
+.lightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1rem;
+}
+.lightbox.active {
+    display: flex;
+}
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 75vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+.caption {
+    margin-top: 0.8rem;
+    color: #eee;
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 90vw;
+    text-align: center;
+    user-select: none;
+}
+
+/* Buttons for controlling lightbox */
+.close-btn,
+.nav-btn {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.1rem 0.6rem 0 0.6rem;
+    line-height: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.25s ease;
+}
+.close-btn:hover,
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+.close-btn {
+    top: 1rem;
+    right: 1rem;
+    font-weight: 700;
+    font-size: 3rem;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 37px;
+    border-radius: 50%;
+}
+.prev-btn {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+.next-btn {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+/* Responsive tweaking */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .gallery img {
+        height: 120px;
+    }
+    .caption {
+        font-size: 1rem;
+    }
+}
+
